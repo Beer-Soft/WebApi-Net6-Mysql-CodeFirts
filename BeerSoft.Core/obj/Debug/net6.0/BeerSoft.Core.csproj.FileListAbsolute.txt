@@ -1,0 +1,12 @@
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\bin\Debug\net6.0\BeerSoft.Core.deps.json
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\bin\Debug\net6.0\BeerSoft.Core.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\bin\Debug\net6.0\BeerSoft.Core.pdb
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.csproj.AssemblyReference.cache
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.AssemblyInfoInputs.cache
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.AssemblyInfo.cs
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.csproj.CoreCompileInputs.cache
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\refint\BeerSoft.Core.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\BeerSoft.Core.pdb
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.Core\obj\Debug\net6.0\ref\BeerSoft.Core.dll

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PipKsnAAMmwjLUtEeNi0WxWs2YSW/7LkUfmA8i9isR4=",
+  "Source": "BeerSoft.API",
+  "BasePath": "_content/BeerSoft.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
