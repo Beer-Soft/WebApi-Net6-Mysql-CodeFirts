@@ -1,6 +1,8 @@
 ﻿using BeerSoft.Core.Interfaces;
 using BeerSoft.Infrastructure.Data;
 using BeerSoft.Infrastructure.Repositories;
+using Core.Interfaces;
+using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,8 @@ namespace BeerSoft.Infrastructure.UnitOfWork
         private IProductoRepository _productos;
         private IMarcaRepository _marcas;
         private ICategoriaRepository _categorias;
+        private IRolRepository _roles;
+        private IUsuarioRepository _usuarios;
 
         public UnitOfWork(TiendaContext context)
         {
@@ -56,8 +60,32 @@ namespace BeerSoft.Infrastructure.UnitOfWork
                 return _productos;
             }
         }
+        public IRolRepository Roles
+        {
+            get
+            {
+                if (_roles == null)
+                {
+                    _roles = new RolRepository(_context);
+                }
+                return _roles;
+            }
+        }
 
-        public  async Task<int> SaveAsync()
+
+        public IUsuarioRepository Usuarios
+        {
+            get
+            {
+                if (_usuarios == null)
+                {
+                    _usuarios = new UsuarioRepository(_context);
+                }
+                return _usuarios;
+            }
+        }
+
+        public async Task<int> SaveAsync()
         {
             return await _context.SaveChangesAsync();
         }

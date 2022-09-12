@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace BeerSoft.Core.Interfaces
         IProductoRepository Productos { get; }
         IMarcaRepository Marcas { get; }
         ICategoriaRepository Categorias { get; }
-       Task<int> SaveAsync();
+        IRolRepository Roles { get; }
+        IUsuarioRepository Usuarios { get; }
+        Task<int> SaveAsync();
     }
 }

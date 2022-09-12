@@ -43,3 +43,11 @@ C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\CsvHelper.dll
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\AutoMapper.dll
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

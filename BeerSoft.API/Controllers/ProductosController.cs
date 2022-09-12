@@ -3,13 +3,14 @@ using AutoMapper;
 using BeerSoft.Core.Entities;
 using BeerSoft.Core.Interfaces;
 using BeerSoft.Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeerSoft.API.Controllers
 {
-
+    [Authorize(Roles ="Administrador")]
     public class ProductosController : BaseApiController
     {
         private readonly IUnitOfWork _unitOfWork;
