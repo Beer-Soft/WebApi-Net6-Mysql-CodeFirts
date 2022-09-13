@@ -7,4 +7,5 @@ public interface IUserService
     Task<DatosUsuarioDto> GetTokenAsync(LoginDto model);
 
     Task<string> AddRoleAsync(AddRoleDto model);
+    Task<DatosUsuarioDto> RefreshTokenAsync(string refreshToken);
 }
