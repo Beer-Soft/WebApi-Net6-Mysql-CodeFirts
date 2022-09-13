@@ -51,3 +51,13 @@ C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\bin\Debug\net6.0\Serilog.Sinks.File.dll

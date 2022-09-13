@@ -1,4 +1,4 @@
-﻿namespace API.Helpers;
+﻿namespace BeerSoft.API.Helpers;
 
 public class JWT
 {

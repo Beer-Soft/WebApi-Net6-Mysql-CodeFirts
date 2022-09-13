@@ -1,4 +1,7 @@
-﻿using API.Helpers;
+﻿//using API.Helpers;
+//using API.Helpers.Errors;
+using BeerSoft.API.Helpers;
+using BeerSoft.API.Helpers.Errors;
 using API.Services;
 using BeerSoft.Core.Interfaces;
 using BeerSoft.Infrastructure.Repositories;
@@ -6,6 +9,7 @@ using BeerSoft.Infrastructure.UnitOfWork;
 using Core.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -60,6 +64,27 @@ namespace BeerSoft.API.Extensions
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]))
                     };
                 });
+        }
+
+        public static void AddValidationErrors(this IServiceCollection services)
+        {
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = actionContext =>
+                {
+
+                    var errors = actionContext.ModelState.Where(u => u.Value.Errors.Count > 0)
+                                                    .SelectMany(u => u.Value.Errors)
+                                                    .Select(u => u.ErrorMessage).ToArray();
+
+                    var errorResponse = new ApiValidation()
+                    {
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(errorResponse);
+                };
+            });
         }
 
     }
