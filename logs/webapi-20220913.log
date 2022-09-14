@@ -398,3 +398,36 @@ INNER JOIN `Categoria` AS `c` ON `p`.`CategoriaId` = `c`.`Id`
 [2022-09-13 00:31:13.509 -05:00 INF] Executed action BeerSoft.API.Controllers.ProductosController.Post (BeerSoft.API) in 14.3981ms
 [2022-09-13 00:31:13.509 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.ProductosController.Post (BeerSoft.API)'
 [2022-09-13 00:31:13.510 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/productos application/json 114 - 400 - application/json;+charset=utf-8 18.2903ms
+[2022-09-13 23:02:38.847 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-13 23:02:39.756 -05:00 INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-13 23:02:39.827 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-13 23:02:39.906 -05:00 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-13 23:02:39.939 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-13 23:02:40.544 -05:00 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-13 23:02:40.555 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-13 23:02:40.563 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-13 23:02:40.572 -05:00 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-13 23:02:40.840 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-13 23:02:41.183 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-13 23:02:41.190 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-13 23:02:41.205 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-13 23:02:41.208 -05:00 INF] Hosting environment: Development
+[2022-09-13 23:02:41.212 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-13 23:02:55.016 -05:00 INF] Application is shutting down...
