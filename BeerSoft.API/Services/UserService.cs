@@ -1,5 +1,6 @@
 ﻿using API.Dtos;
 using API.Helpers;
+using BeerSoft.API.Dtos;
 using BeerSoft.API.Helpers;
 using BeerSoft.Core.Interfaces;
 using Core.Entities;
@@ -72,7 +73,25 @@ namespace API.Services
             }
         }
 
+        public async Task<UsuarioInfoDto> GetInfoUsuario(int id)
+        {
+            UsuarioInfoDto infoUsuario = new UsuarioInfoDto();
+            var usuario = await _unitOfWork.Usuarios
+                .GetByIdAsync(id);
+            if (usuario == null)
+            {
+                infoUsuario.Mensaje = $"No existe ningún usuario con el id {id}.";
+                return infoUsuario;
+            }
 
+            infoUsuario.UserName = usuario.Username;
+            infoUsuario.Email = usuario.Email;
+            infoUsuario.Nombre = usuario.Nombres;
+            infoUsuario.APaterno = usuario.ApellidoPaterno;
+            infoUsuario.AMaterno = usuario.ApellidoMaterno;
+
+            return infoUsuario;
+        }
         public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
         {
             DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
@@ -90,6 +109,7 @@ namespace API.Services
 
             if (resultado == PasswordVerificationResult.Success)
             {
+                datosUsuarioDto.Nombre = string.Format("{0} {1} {2}", usuario.Nombres,usuario.ApellidoPaterno,usuario.ApellidoMaterno) ;
                 datosUsuarioDto.EstaAutenticado = true;
                 JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
                 datosUsuarioDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
@@ -232,7 +252,7 @@ namespace API.Services
                 roleClaims.Add(new Claim("roles", role.Nombre));
             }
             var claims = new[]
-            {
+            {                   new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()),
                                 new Claim(JwtRegisteredClaimNames.Sub, usuario.Username),
                                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                                 new Claim(JwtRegisteredClaimNames.Email, usuario.Email),

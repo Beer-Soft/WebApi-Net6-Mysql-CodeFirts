@@ -15,17 +15,12 @@ export const useAuthStore = defineStore({
     actions: {
         async login(username, password) {
             const user = await fetchWrapper.post(`${baseUrl}/token`, { username, password });
-
-           
-            this.user = user;
-
-            console.log(user);
-
-            
+            // console.log(user.estaAutenticado);
+             this.user = user;
             localStorage.setItem('user', JSON.stringify(user));
-
-            // redirect to previous url or default to home page
+            //rederije a la pagina anterior o default de la pagina de inicio
             router.push(this.returnUrl || '/');
+            //}
         },
         logout() {
             this.user = null;
