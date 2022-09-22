@@ -1,0 +1,568 @@
+[2022-09-22 00:00:40.645 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:00:41.714 -05:00 INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:00:41.808 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:00:41.875 -05:00 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:00:41.916 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:00:42.437 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:00:42.446 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:00:42.451 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:00:42.455 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:00:42.804 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:00:43.149 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:00:43.152 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:00:43.161 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:00:43.163 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:00:43.167 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:00:49.949 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:00:51.000 -05:00 INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '22/09/2022 04:39:31 a. m.', Current time: '22/09/2022 05:00:50 a. m.'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+[2022-09-22 00:00:51.167 -05:00 INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '22/09/2022 04:39:31 a. m.', Current time: '22/09/2022 05:00:50 a. m.'.
+[2022-09-22 00:00:51.174 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:00:51.201 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:00:51.308 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:00:51.670 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:00:51.802 -05:00 INF] Executed DbCommand (34ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:00:52.078 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:00:52.108 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 896.7257ms
+[2022-09-22 00:00:52.111 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:00:52.126 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 2181.4120ms
+[2022-09-22 00:00:56.594 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:00:56.638 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:00:56.641 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:11:30.653 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:11:31.293 -05:00 INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:11:31.352 -05:00 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:11:31.411 -05:00 INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:11:31.450 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:11:31.884 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:11:31.893 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:11:31.897 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:11:31.903 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:11:32.074 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:11:32.262 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:11:32.264 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:11:32.276 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:11:32.278 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:11:32.280 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:11:37.654 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:11:38.073 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:11:38.101 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:11:38.165 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:11:38.524 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:11:38.633 -05:00 INF] Executed DbCommand (33ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:11:38.849 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:11:38.879 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 765.2049ms
+[2022-09-22 00:11:38.882 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:11:38.904 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1252.7712ms
+[2022-09-22 00:11:43.396 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:11:43.415 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:11:43.418 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:14:42.082 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:14:42.702 -05:00 INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:14:42.765 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:14:42.832 -05:00 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:14:42.867 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:14:43.286 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:14:43.296 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:14:43.300 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:14:43.306 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:14:43.463 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:14:43.628 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:14:43.630 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:14:43.639 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:14:43.641 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:14:43.644 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:15:05.710 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:15:06.119 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:15:06.145 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:15:06.209 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:15:06.587 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:15:06.699 -05:00 INF] Executed DbCommand (31ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:15:06.914 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:15:06.941 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 785.3245ms
+[2022-09-22 00:15:06.944 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:15:06.959 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1253.8732ms
+[2022-09-22 00:15:10.434 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:15:10.447 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:15:10.450 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:16:31.311 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:16:31.962 -05:00 INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:16:32.019 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:16:32.076 -05:00 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:16:32.108 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:16:32.525 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:16:32.534 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:16:32.538 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:16:32.544 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:16:32.683 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:16:32.850 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:16:32.852 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:16:32.860 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:16:32.862 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:16:32.864 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:16:40.214 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:16:40.658 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:16:40.684 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:16:40.749 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:16:41.120 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:16:41.238 -05:00 INF] Executed DbCommand (35ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:16:41.456 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:16:41.486 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 790.9818ms
+[2022-09-22 00:16:41.489 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:16:41.503 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1294.3775ms
+[2022-09-22 00:16:44.839 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:16:44.854 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:16:44.857 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:20:51.954 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:20:52.589 -05:00 INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:20:52.647 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:20:52.701 -05:00 INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:20:52.734 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:20:53.164 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:20:53.173 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:20:53.177 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:20:53.183 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:20:53.353 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:20:53.507 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:20:53.508 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:20:53.518 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:20:53.523 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:20:53.525 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:21:00.832 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:21:01.389 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:21:01.429 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:21:01.511 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:21:01.900 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:21:02.009 -05:00 INF] Executed DbCommand (29ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:21:02.214 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:21:02.242 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 802.1498ms
+[2022-09-22 00:21:02.245 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:21:02.262 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1435.1990ms
+[2022-09-22 00:21:06.558 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:21:06.571 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:21:06.575 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:38:25.229 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:38:25.868 -05:00 INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:38:25.935 -05:00 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:38:26.003 -05:00 INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:38:26.036 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:38:26.456 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:38:26.466 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:38:26.471 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:38:26.477 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:38:26.658 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:38:26.826 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:38:26.828 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:38:26.840 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:38:26.842 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:38:26.844 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:38:32.467 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:38:32.906 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:38:32.947 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:38:33.014 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:38:33.375 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:38:33.489 -05:00 INF] Executed DbCommand (30ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:38:33.713 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:38:33.741 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 782.6114ms
+[2022-09-22 00:38:33.745 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:38:33.762 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1300.5852ms
+[2022-09-22 00:38:37.288 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:38:37.308 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:38:37.313 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:39:26.850 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:39:26.865 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`Activo`, `m`.`FechaAlta`, `m`.`Icono`, `m`.`MenuIdPadre`, `m`.`Roles`, `m`.`Titulo`, `m`.`Url`
+FROM `Menu` AS `m`
+[2022-09-22 00:39:26.922 -05:00 INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BeerSoft.API.Dtos.MenuDto, BeerSoft.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-09-22 00:39:26.925 -05:00 INF] Executed action BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API) in 49612.0551ms
+[2022-09-22 00:39:26.926 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:39:26.928 -05:00 INF] Request finished HTTP/1.1 GET https://localhost:5001/api/Menus - - - 200 - application/json;+charset=utf-8 49639.7647ms
+[2022-09-22 00:40:02.425 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:40:02.434 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:40:02.434 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:42:01.429 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:42:01.448 -05:00 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`Activo`, `m`.`FechaAlta`, `m`.`Icono`, `m`.`MenuIdPadre`, `m`.`Roles`, `m`.`Titulo`, `m`.`Url`
+FROM `Menu` AS `m`
+[2022-09-22 00:42:01.450 -05:00 INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BeerSoft.API.Dtos.MenuDto, BeerSoft.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-09-22 00:42:01.450 -05:00 INF] Executed action BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API) in 119015.8279ms
+[2022-09-22 00:42:01.450 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:42:01.451 -05:00 INF] Request finished HTTP/1.1 GET https://localhost:5001/api/Menus - - - 200 - application/json;+charset=utf-8 119025.2780ms
+[2022-09-22 00:43:47.266 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:43:48.011 -05:00 INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:43:48.072 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:43:48.134 -05:00 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:43:48.172 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:43:48.604 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:43:48.614 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:43:48.620 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:43:48.626 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:43:48.785 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:43:48.968 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:43:48.969 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:43:48.978 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:43:48.979 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:43:48.981 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:44:10.993 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:44:11.492 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:44:11.524 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:44:11.613 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:44:12.066 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:44:12.178 -05:00 INF] Executed DbCommand (29ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:44:12.408 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:44:12.440 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 901.2857ms
+[2022-09-22 00:44:12.445 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:44:12.457 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1467.9390ms
+[2022-09-22 00:44:15.600 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:44:15.613 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:44:15.616 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:47:44.899 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:47:45.671 -05:00 INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:47:45.749 -05:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:47:45.808 -05:00 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:47:45.845 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:47:46.327 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:47:46.342 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:47:46.347 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:47:46.354 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:47:46.568 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:47:46.725 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:47:46.728 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:47:46.737 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:47:46.740 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:47:46.743 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:47:54.622 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:47:55.057 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:47:55.083 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:47:55.146 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:47:55.510 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:47:55.627 -05:00 INF] Executed DbCommand (31ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:47:55.834 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:47:55.862 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 769.3677ms
+[2022-09-22 00:47:55.865 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:47:55.881 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1262.3762ms
+[2022-09-22 00:48:00.190 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:48:00.207 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:48:00.210 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:50:08.205 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:50:08.861 -05:00 INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:50:08.927 -05:00 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='tiendaBD' AND TABLE_NAME='__EFMigrationsHistory';
+[2022-09-22 00:50:08.990 -05:00 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[2022-09-22 00:50:09.025 -05:00 INF] No migrations were applied. The database is already up to date.
+[2022-09-22 00:50:09.447 -05:00 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Marca` AS `m`)
+[2022-09-22 00:50:09.458 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Categoria` AS `c`)
+[2022-09-22 00:50:09.462 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Producto` AS `p`)
+[2022-09-22 00:50:09.469 -05:00 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rol` AS `r`)
+[2022-09-22 00:50:09.629 -05:00 INF] User profile is available. Using 'C:\Users\diego.luna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-09-22 00:50:09.786 -05:00 INF] Now listening on: https://localhost:5001
+[2022-09-22 00:50:09.788 -05:00 INF] Now listening on: http://localhost:5000
+[2022-09-22 00:50:09.797 -05:00 INF] Application started. Press Ctrl+C to shut down.
+[2022-09-22 00:50:09.799 -05:00 INF] Hosting environment: Development
+[2022-09-22 00:50:09.801 -05:00 INF] Content root path: C:\ProyectosDiego\Core_Net6\BeerSoft.NetCore.Net6\BeerSoft.API\
+[2022-09-22 00:50:23.961 -05:00 INF] Request starting HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72
+[2022-09-22 00:50:24.381 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:50:24.415 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-22 00:50:24.479 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:50:24.831 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2022-09-22 00:50:24.953 -05:00 INF] Executed DbCommand (42ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-22 00:50:25.192 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-22 00:50:25.221 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 793.0972ms
+[2022-09-22 00:50:25.223 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-22 00:50:25.246 -05:00 INF] Request finished HTTP/1.1 POST https://localhost:5001/api/usuarios/token application/json 72 - 200 - application/json;+charset=utf-8 1287.0367ms
+[2022-09-22 00:50:31.403 -05:00 INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Menus - -
+[2022-09-22 00:50:31.419 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:50:31.422 -05:00 INF] Route matched with {action = "Get", controller = "Menus"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BeerSoft.API.Dtos.MenuDto]]] Get() on controller BeerSoft.API.Controllers.MenusController (BeerSoft.API).
+[2022-09-22 00:50:48.548 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-22 00:50:48.569 -05:00 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`Id`, `m`.`Activo`, `m`.`FechaAlta`, `m`.`Icono`, `m`.`MenuIdPadre`, `m`.`Roles`, `m`.`Titulo`, `m`.`Url`
+FROM `Menu` AS `m`
+[2022-09-22 00:50:48.618 -05:00 INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BeerSoft.API.Dtos.MenuDto, BeerSoft.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-09-22 00:50:48.620 -05:00 INF] Executed action BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API) in 17198.099ms
+[2022-09-22 00:50:48.620 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.MenusController.Get (BeerSoft.API)'
+[2022-09-22 00:50:48.622 -05:00 INF] Request finished HTTP/1.1 GET https://localhost:5001/api/Menus - - - 200 - application/json;+charset=utf-8 17219.2191ms

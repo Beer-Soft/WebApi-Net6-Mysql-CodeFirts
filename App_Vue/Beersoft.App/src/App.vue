@@ -4,10 +4,16 @@ import { useAuthStore } from "@/stores";
 
 const authStore = useAuthStore();
 
-console.log(authStore);
+//console.log(authStore);
 </script>
 
 <template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+
+<!-- <template>
   <div class="app-container bg-light">
     <nav
       v-show="authStore.user"
@@ -22,8 +28,8 @@ console.log(authStore);
       <RouterView />
     </div>
   </div>
-</template>
+</template> -->
 
-<style>
+<!-- <style>
 @import "@/assets/base.css";
-</style>
+</style> -->

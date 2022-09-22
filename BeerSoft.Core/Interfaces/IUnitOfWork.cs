@@ -14,6 +14,7 @@ namespace BeerSoft.Core.Interfaces
         ICategoriaRepository Categorias { get; }
         IRolRepository Roles { get; }
         IUsuarioRepository Usuarios { get; }
+        IMenuRepository Menus { get; }
         Task<int> SaveAsync();
     }
 }

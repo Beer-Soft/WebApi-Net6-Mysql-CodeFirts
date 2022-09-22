@@ -19,6 +19,7 @@ namespace BeerSoft.Infrastructure.UnitOfWork
         private ICategoriaRepository _categorias;
         private IRolRepository _roles;
         private IUsuarioRepository _usuarios;
+        private IMenuRepository _menus;
 
         public UnitOfWork(TiendaContext context)
         {
@@ -82,6 +83,19 @@ namespace BeerSoft.Infrastructure.UnitOfWork
                     _usuarios = new UsuarioRepository(_context);
                 }
                 return _usuarios;
+            }
+        }
+
+        public IMenuRepository Menus
+        {
+            get
+            {
+                if(_menus == null)
+                {
+                    _menus = new MenuRepository(_context);
+                }
+
+                return _menus;
             }
         }
 

@@ -1,0 +1,27 @@
+[2022-09-20 00:50:06.043 -05:00 INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/usuarios/token - -
+[2022-09-20 00:50:06.052 -05:00 INF] CORS policy execution successful.
+[2022-09-20 00:50:06.052 -05:00 INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/usuarios/token - - - 204 - - 14.5225ms
+[2022-09-20 00:50:06.061 -05:00 INF] Request starting HTTP/2 POST https://localhost:5001/api/usuarios/token application/json 58
+[2022-09-20 00:50:06.062 -05:00 INF] CORS policy execution successful.
+[2022-09-20 00:50:06.063 -05:00 INF] Executing endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-20 00:50:06.064 -05:00 INF] Route matched with {action = "GetToken", controller = "Usuarios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(API.Dtos.LoginDto) on controller BeerSoft.API.Controllers.UsuariosController (BeerSoft.API).
+[2022-09-20 00:50:06.081 -05:00 INF] Entity Framework Core 6.0.8 initialized 'TiendaContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: ServerVersion 8.0.28-mysql 
+[2022-09-20 00:50:06.138 -05:00 INF] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`ApellidoMaterno`, `t`.`ApellidoPaterno`, `t`.`Email`, `t`.`Nombres`, `t`.`Password`, `t`.`Username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`Nombre`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UsuarioId`
+FROM (
+    SELECT `u`.`Id`, `u`.`ApellidoMaterno`, `u`.`ApellidoPaterno`, `u`.`Email`, `u`.`Nombres`, `u`.`Password`, `u`.`Username`
+    FROM `Usuario` AS `u`
+    WHERE LOWER(`u`.`Username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`Nombre`
+    FROM `UsuariosRoles` AS `u0`
+    INNER JOIN `Rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UsuarioId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2022-09-20 00:50:06.149 -05:00 INF] Executing OkObjectResult, writing value of type 'API.Dtos.DatosUsuarioDto'.
+[2022-09-20 00:50:06.149 -05:00 INF] Executed action BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API) in 85.0429ms
+[2022-09-20 00:50:06.149 -05:00 INF] Executed endpoint 'BeerSoft.API.Controllers.UsuariosController.GetTokenAsync (BeerSoft.API)'
+[2022-09-20 00:50:06.149 -05:00 INF] Request finished HTTP/2 POST https://localhost:5001/api/usuarios/token application/json 58 - 200 - application/json;+charset=utf-8 88.3796ms

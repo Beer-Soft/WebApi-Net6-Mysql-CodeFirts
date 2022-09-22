@@ -1,5 +1,6 @@
 ﻿using API.Dtos;
 using AutoMapper;
+using BeerSoft.API.Dtos;
 using BeerSoft.Core.Entities;
 
 namespace BeerSoft.API.Profiles;
@@ -30,6 +31,9 @@ public class MappingProfiles : Profile
                 .ReverseMap()
                 .ForMember(origen => origen.Categoria, dest => dest.Ignore())
                 .ForMember(origen => origen.Marca, dest => dest.Ignore());
+
+        CreateMap<Menu, MenuDto>()
+                .ReverseMap();
     }
 }
 

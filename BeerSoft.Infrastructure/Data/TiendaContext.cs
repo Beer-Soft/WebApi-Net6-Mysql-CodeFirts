@@ -23,6 +23,8 @@ namespace BeerSoft.Infrastructure.Data
         public  DbSet<Categoria>  Categorias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
+
+        public DbSet<Menu> Menus { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

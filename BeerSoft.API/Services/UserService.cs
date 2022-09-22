@@ -256,7 +256,8 @@ namespace API.Services
                                 new Claim(JwtRegisteredClaimNames.Sub, usuario.Username),
                                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                                 new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
-                                new Claim("uid", usuario.Id.ToString())
+                                new Claim("uid", usuario.Id.ToString()),
+                                new Claim("UserId", usuario.Id.ToString())
                         }
             .Union(roleClaims);
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));

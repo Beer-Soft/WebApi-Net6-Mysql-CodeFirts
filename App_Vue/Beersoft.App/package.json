@@ -8,6 +8,7 @@
     "test:unit": "vitest --environment jsdom"
   },
   "dependencies": {
+    "chart.js": "^3.9.1",
     "eslint": "^8.23.1",
     "pinia": "^2.0.21",
     "vee-validate": "^4.6.7",
